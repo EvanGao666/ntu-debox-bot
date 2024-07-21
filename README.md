@@ -29,7 +29,7 @@
 
 Welcome to the DeBox Chat Python SDK, a library to interact with the DeBox API for sending messages and retrieving user and group information.
 
-![App screenshot](docs/static/img/screenshot2.png)
+![App screenshot](docs/static/img/screenshot1.png)
 
 ## ⚡ Getting Started
 
