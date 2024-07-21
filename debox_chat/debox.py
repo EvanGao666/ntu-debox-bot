@@ -206,7 +206,7 @@ class DeBox:
         else:
             response.raise_for_status()
 
-    def send_group_graphic_message(self, group_id, to_user_id, title, content, image_url, href):
+    def send_group_graphic_message(self, group_id, to_user_id, title, content, image_url, href, position='foot', height=230):
         """
         Sends a graphic message to a specified group.
 
@@ -224,6 +224,10 @@ class DeBox:
             The URL of the image to include in the message.
         href : str
             The hyperlink associated with the image.
+        position : str, optional
+            The position of the image ('head' or 'foot'), default is 'foot'.
+        height : int, optional
+            The height of the image, default is 230.
 
         Returns
         -------
@@ -239,14 +243,20 @@ class DeBox:
             "Content-Type": "application/json",
             "X-API-KEY": self.API_KEY
         }
+        image_content = {
+            "uitag": "img",
+            "src": image_url,
+            "position": position,
+            "href": href,
+            "height": height
+        }
+        content_with_image = f"{content} {json.dumps(image_content)}"
         data = {
             "to_user_id": to_user_id,
             "group_id": group_id,
-            "object_name": "RCD:Graphic",
+            "object_name": "richtext",
             "title": title,
-            "content": content,
-            "message": image_url,
-            "href": href
+            "content": content_with_image
         }
         response = requests.post(self.SEND_GROUP_GRAPHIC_MESSAGE_URL, headers=headers, data=json.dumps(data))
         if response.status_code == 200:
@@ -254,7 +264,7 @@ class DeBox:
         else:
             response.raise_for_status()
 
-    def send_graphic_message(self, to_user_id, title, content, image_url, href):
+    def send_graphic_message(self, to_user_id, title, content, image_url, href, position='foot', height=230):
         """
         Sends a graphic message to a specified user.
 
@@ -270,6 +280,10 @@ class DeBox:
             The URL of the image to include in the message.
         href : str
             The hyperlink associated with the image.
+        position : str, optional
+            The position of the image ('head' or 'foot'), default is 'foot'.
+        height : int, optional
+            The height of the image, default is 230.
 
         Returns
         -------
@@ -285,17 +299,22 @@ class DeBox:
             "Content-Type": "application/json",
             "X-API-KEY": self.API_KEY
         }
+        image_content = {
+            "uitag": "img",
+            "src": image_url,
+            "position": position,
+            "href": href,
+            "height": height
+        }
+        content_with_image = f"{content} {json.dumps(image_content)}"
         data = {
             "to_user_id": to_user_id,
-            "object_name": "RCD:Graphic",
+            "object_name": "richtext",
             "title": title,
-            "content": content,
-            "message": image_url,
-            "href": href
+            "content": content_with_image
         }
         response = requests.post(self.SEND_GRAPHIC_MESSAGE_URL, headers=headers, data=json.dumps(data))
         if response.status_code == 200:
             return response.json()
         else:
             response.raise_for_status()
-
