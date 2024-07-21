@@ -19,15 +19,17 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
+  <br>
   <img src="docs/static/img/logo.svg" alt="Logo" width="200" height="200">
   <h1 align="center">DeBox Chat Python SDK</h1>
   <a href="https://cchacons.github.io/debox-chat-python-sdk"><img src="https://img.shields.io/badge/Documentation-DeBox%20Chat%20SDK-blue?logo=googledocs&logoColor=white&style=for-the-badge" alt="Check out the documentation"></a>
+  <br>
 </div>
 <hr>
 
 Welcome to the DeBox Chat Python SDK, a library to interact with the DeBox API for sending messages and retrieving user and group information.
 
-![App screenshot](docs/static/img/screenshot.png)
+![App screenshot](docs/static/img/screenshot1.png)
 
 ## ⚡ Getting Started
 
