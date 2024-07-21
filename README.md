@@ -69,6 +69,8 @@ Here is a simple example to get you started:
 
   ```
 
+![App screenshot](docs/static/img/screenshot2.png)
+
 ## 🤝 How to Contribute
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
