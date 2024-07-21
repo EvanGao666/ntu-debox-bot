@@ -53,19 +53,21 @@ To install the DeBox Chat Python SDK, you have two options:
 
 Here is a simple example to get you started:
 
-```python
-from debox_chat import DeBox
+  ```python
+  from debox_chat import DeBox
 
-# Initialize DeBox with your API key
-debox = DeBox(api_key="your_api_key")
+  # Initialize DeBox with your API key
+  debox = DeBox(api_key="your_api_key")
 
-# Send a text message to a group
-response = debox.send_group_text_message(group_id="group_id", to_user_id="user_id", title="Hello", content="This is a text message.")
-print(response)
+  # Send a text message to a group
+  response = debox.send_group_text_message(group_id="group_id", to_user_id="user_id", title="Hello", content="This is a text message.")
+  print(response)
 
-# Send a graphic message to a group
-response = debox.send_group_graphic_message(group_id="group_id", to_user_id="user_id", title="Check this out", content="Here is an image.", image_url="https://example.com/image.png", href="https://example.com")
-print(response)
+  # Send a graphic message to a group
+  response = debox.send_group_graphic_message(group_id="group_id", to_user_id="user_id", title="Check this out", content="Here is an image.", image_url="https://example.com/image.png", href="https://example.com")
+  print(response)
+
+  ```
 
 ## 🤝 How to Contribute
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
