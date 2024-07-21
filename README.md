@@ -19,7 +19,7 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <img src="docs/static/img/logo.png" alt="Logo" width="200" height="200">
+  <img src="docs/static/img/logo.svg" alt="Logo" width="200" height="200">
   <h1 align="center">DeBox Chat Python SDK</h1>
   <a href="https://cchacons.github.io/debox-chat-python-sdk"><img src="https://img.shields.io/badge/Documentation-DeBox%20Chat%20SDK-blue?logo=googledocs&logoColor=white&style=for-the-badge" alt="Check out the documentation"></a>
 </div>
