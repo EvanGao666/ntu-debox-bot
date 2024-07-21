@@ -8,7 +8,7 @@ We welcome contributions to the DeBox Chat Python SDK project! Whether you want 
 
 ## Reporting Issues
 
-If you encounter any issues with the SDK, please check the existing issues on the [GitHub issues page](https://github.com/your-username/debox-chat-python-sdk/issues) first to see if someone else has already reported the same problem. If not, feel free to open a new issue with a clear description of the problem and the steps to reproduce it.
+If you encounter any issues with the SDK, please check the existing issues on the [GitHub issues page](https://github.com/cchacons/debox-chat-python-sdk/issues) first to see if someone else has already reported the same problem. If not, feel free to open a new issue with a clear description of the problem and the steps to reproduce it.
 
 ## Contributing Code
 
@@ -17,7 +17,7 @@ If you encounter any issues with the SDK, please check the existing issues on th
 1. Fork the repository on GitHub.
 2. Clone your forked repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/debox-chat-python-sdk.git
+   git clone https://github.com/cchacons/debox-chat-python-sdk.git
    ```
 
 3. Navigate to the project directory:
