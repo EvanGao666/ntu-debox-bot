@@ -10,18 +10,18 @@
 -->
 
 <div align="center">
-  <a href="https://github.com/your-username/debox-chat-python-sdk/graphs/contributors"><img src="https://img.shields.io/github/contributors/your-username/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Contributors"></a>
-  <a href="https://github.com/your-username/debox-chat-python-sdk/network/members"><img src="https://img.shields.io/github/forks/your-username/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Forks"></a>
-  <a href="https://github.com/your-username/debox-chat-python-sdk/stargazers"><img src="https://img.shields.io/github/stars/your-username/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Stargazers"></a>
-  <a href="https://github.com/your-username/debox-chat-python-sdk/issues"><img src="https://img.shields.io/github/issues/your-username/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Issues"></a>
-  <a href="https://github.com/your-username/debox-chat-python-sdk/blob/main/LICENSE"><img src="https://img.shields.io/github/license/your-username/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="MIT License"></a>
+  <a href="https://github.com/cchacons/debox-chat-python-sdk/graphs/contributors"><img src="https://img.shields.io/github/contributors/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Contributors"></a>
+  <a href="https://github.com/cchacons/debox-chat-python-sdk/network/members"><img src="https://img.shields.io/github/forks/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Forks"></a>
+  <a href="https://github.com/cchacons/debox-chat-python-sdk/stargazers"><img src="https://img.shields.io/github/stars/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Stargazers"></a>
+  <a href="https://github.com/cchacons/debox-chat-python-sdk/issues"><img src="https://img.shields.io/github/issues/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Issues"></a>
+  <a href="https://github.com/cchacons/debox-chat-python-sdk/blob/main/LICENSE"><img src="https://img.shields.io/github/license/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="MIT License"></a>
 </div>
 
 <!-- PROJECT LOGO -->
 <div align="center">
   <img src="docs/static/img/logo.png" alt="Logo" width="200" height="200">
   <h1 align="center">DeBox Chat Python SDK</h1>
-  <a href="https://your-username.github.io/debox-chat-python-sdk"><img src="https://img.shields.io/badge/Documentation-DeBox%20Chat%20SDK-blue?logo=googledocs&logoColor=white&style=for-the-badge" alt="Check out the documentation"></a>
+  <a href="https://cchacons.github.io/debox-chat-python-sdk"><img src="https://img.shields.io/badge/Documentation-DeBox%20Chat%20SDK-blue?logo=googledocs&logoColor=white&style=for-the-badge" alt="Check out the documentation"></a>
 </div>
 <hr>
 
@@ -36,7 +36,7 @@ To install the DeBox Chat Python SDK, you have two options:
 1. Clone the repository and install manually:
 
     ```bash
-    git clone https://github.com/your-username/debox-chat-python-sdk.git
+    git clone https://github.com/cchacons/debox-chat-python-sdk.git
     cd debox-chat-python-sdk
     pip install .
     ```
@@ -44,7 +44,7 @@ To install the DeBox Chat Python SDK, you have two options:
 2. Install directly from the GitHub repository using pip:
 
     ```bash
-    pip install git+https://github.com/your-username/debox-chat-python-sdk.git
+    pip install git+https://github.com/cchacons/debox-chat-python-sdk.git
     ```
 
 ## 🚀 Usage
