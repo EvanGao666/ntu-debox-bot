@@ -1,7 +1,6 @@
 
 ### `CONTRIBUTING.md`
 
-```markdown
 # Contributing to DeBox Chat Python SDK
 
 We welcome contributions to the DeBox Chat Python SDK project! Whether you want to report a bug, improve the documentation, or contribute to the codebase, we appreciate your help.
