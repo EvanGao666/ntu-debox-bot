@@ -1,99 +1,84 @@
-<a name="readme-top"></a>
+# NTU DeBox Chatbot
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
+本项目是一个基于 Flask 的聊天机器人，集成了 **DeBox SDK** 和 **OpenAI (DeepSeek API)**。机器人可监听聊天群组中的特定命令并提供智能回复。所有配置详情均安全地存储在 `.env` 文件中，确保代码与配置分离。
 
-<div align="center">
-  <a href="https://github.com/cchacons/debox-chat-python-sdk/graphs/contributors"><img src="https://img.shields.io/github/contributors/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Contributors"></a>
-  <a href="https://github.com/cchacons/debox-chat-python-sdk/network/members"><img src="https://img.shields.io/github/forks/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Forks"></a>
-  <a href="https://github.com/cchacons/debox-chat-python-sdk/stargazers"><img src="https://img.shields.io/github/stars/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Stargazers"></a>
-  <a href="https://github.com/cchacons/debox-chat-python-sdk/issues"><img src="https://img.shields.io/github/issues/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="Issues"></a>
-  <a href="https://github.com/cchacons/debox-chat-python-sdk/blob/main/LICENSE"><img src="https://img.shields.io/github/license/cchacons/debox-chat-python-sdk?style=for-the-badge&color=blue" alt="MIT License"></a>
-</div>
+---
 
-<!-- PROJECT LOGO -->
-<div align="center">
-  <br>
-  <img src="docs/static/img/logo.svg" alt="Logo" width="200" height="200">
-  <h1 align="center">DeBox Chat Python SDK</h1>
-  <a href="https://cchacons.github.io/debox-chat-python-sdk"><img src="https://img.shields.io/badge/Documentation-DeBox%20Chat%20SDK-blue?logo=googledocs&logoColor=white&style=for-the-badge" alt="Check out the documentation"></a>
-  <br>
-</div>
-<hr>
+## 功能特点
 
-Welcome to the DeBox Chat Python SDK, a library to interact with the DeBox API for sending messages and retrieving user and group information.
+1. **基于命令的交互**：
+    - `/bot`：激活机器人，为用户开启监听功能。
+    - `/stop`：停用机器人，停止监听用户消息。
+2. **智能回复**：利用 OpenAI 的 DeepSeek API 生成自然语言回复。
+3. **安全的 Webhook 验证**：通过 `WEBHOOK_KEY` 确保只处理经过认证的请求。
+4. **模块化配置**：使用 `.env` 文件管理环境变量，便于配置和维护。
 
-![App screenshot](docs/static/img/screenshot1.png)
+---
 
-## ⚡ Getting Started
+## 环境需求
 
-To install the DeBox Chat Python SDK, you have two options:
+请确保已安装以下环境：
 
-1. Clone the repository and install manually:
+-   Python 3.8+
+-   `pip`（Python 包管理工具）
+
+---
+
+## 安装步骤
+
+1. **克隆仓库**：
 
     ```bash
-    git clone https://github.com/cchacons/debox-chat-python-sdk.git
-    cd debox-chat-python-sdk
-    pip install .
+    git clone <repository-url>
+    cd <repository-folder>
     ```
 
-2. Install directly from the GitHub repository using pip:
+2. **设置环境变量**：  
+   在项目根目录下创建 `.env` 文件，并添加以下内容：
+
+    ```dotenv
+    DEBOX_API_KEY=<你的_debox_api_key>
+    OPENAI_API_KEY=<你的_openai_api_key>
+    OPENAI_BASE_URL=https://api.deepseek.com
+    WEBHOOK_KEY=<你的_webhook_key>
+    FLASK_HOST=0.0.0.0
+    FLASK_PORT=5000
+    ```
+
+    将 `<你的_debox_api_key>`、`<你的_openai_api_key>` 和 `<你的_webhook_key>` 替换为你的实际密钥。
+
+---
+
+## 使用方法
+
+### 激活机器人
+
+1. 在你的聊天群组中输入 `/bot` 来激活机器人。
+2. 机器人将开始监听你的消息并提供智能回复。
+
+### 停用机器人
+
+1. 在你的聊天群组中输入 `/stop` 来停用机器人。
+2. 机器人将停止监听你的消息。
+
+---
+
+## 部署步骤
+
+1. 打开一个终端，运行以下命令：
 
     ```bash
-    pip install git+https://github.com/cchacons/debox-chat-python-sdk.git
+    ngrok http 5000
     ```
 
-## 🚀 Usage
+    在输出中找到 `Forwarding` 后的 URL，配置到 DeBox|Developer 的 Information-> App Domain 和 Bot-> Webhook URL 中。拿到 Webhook Key 填入.env 文件中。
 
-Here is a simple example to get you started:
+2. 再打开一个终端，运行以下命令：
 
-  ```python
+    ```bash
+    python tests/2-deepseek.py
+    ```
 
-  from debox_chat import DeBox
+---
 
-  # Initialize DeBox with your API key
-  debox = DeBox(api_key="your_api_key")
-
-  # User and Group IDs
-  user_id = "0qkl9pdk"
-  group_id = "dj6txzao"
-  image_url = "https://data.debox.space/dao/newpic/one.png"
-  href = "https://data.debox.space/dao/newpic/one.png"
-
-  # Send a text message to a user
-  response = debox.send_message(user_id, "Hello! Have a great day with DeBox!")
-  print("Send Message to User Response:", response)
-
-  # Send a graphic message to a user
-  title = "Surprise!"
-  content = "Look at this funny image, isn't it cool?"
-  response = debox.send_graphic_message(user_id, title, content, image_url, href)
-  print("Send Graphic Message to User Response:", response)
-
-  # Send a text message to a group
-  response = debox.send_group_text_message(group_id, user_id, "Daily Reminder", "Don't forget to check your DeBox tasks!")
-  print("Send Text Message to Group Response:", response)
-
-  # Send a graphic message to a group
-  title = "Check out this cute pic!"
-  content = "Here's an adorable picture to brighten your day."
-  response = debox.send_group_graphic_message(group_id, user_id, title, content, image_url, href)
-  print("Send Graphic Message to Group Response:", response)
-
-  ```
-
-![App screenshot](docs/static/img/screenshot2.png)
-
-## 🤝 How to Contribute
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-For details, please check CONTRIBUTING.md.
-
-## 📜 License
-Distributed under the GPL-3.0 license. See LICENSE for more information.
+这样你就可以成功部署并运行该聊天机器人！
