@@ -1,4 +1,4 @@
-# NTU-DeBox Capstone Chatbot
+# NTU Student-Led DeBox Chatbot (Capstone Project)
 
 本项目是一个基于 Flask 的聊天机器人，集成了 **DeBox SDK** 和 **OpenAI (DeepSeek API)**。机器人可监听聊天群组中的特定命令并提供智能回复。所有配置详情均安全地存储在 `.env` 文件中，确保代码与配置分离。
 
