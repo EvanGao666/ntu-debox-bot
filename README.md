@@ -68,7 +68,7 @@
 1. 打开一个终端，运行以下命令：
 
     ```bash
-    ngrok http 你的url（利用ngrok的static domain） 5000
+    ngrok http --url='ngrok提供的static domain' 5000
     ```
 
     在输出中找到 `Forwarding` 后的 URL，配置到 DeBox|Developer 的 Information-> App Domain 和 Bot-> Webhook URL 中。拿到 Webhook Key 填入.env 文件中。
