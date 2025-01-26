@@ -29,8 +29,8 @@
 1. **克隆仓库**：
 
     ```bash
-    git clone <repository-url>
-    cd <repository-folder>
+    git clone https://github.com/EvanGao666/ntu-debox-bot.git
+    cd ntu-debox-bot
     ```
 
 2. **设置环境变量**：  
