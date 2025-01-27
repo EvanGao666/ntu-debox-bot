@@ -65,16 +65,19 @@
 
 ## 部署步骤
 
-1. 打开一个终端，运行以下命令：
+1. 进入 ngrok 网站，找到 static domain，配置到 DeBox|Developer 的 Information-> App Domain。
+
+2. 打开一个终端，运行以下命令：
 
     ```bash
     ngrok http --url='ngrok提供的static domain' 5000
     ```
 
-    将 ngrok 提供的 static domain 配置到 DeBox|Developer 的 Information-> App Domain
-    在输出中找到 `Forwarding` 后的 URL 配置到 DeBox|Developer 的 Bot-> Webhook URL。拿到 Webhook Key 填入.env 文件中。
+    在输出中找到 `Forwarding` 后的 URL 配置到 DeBox|Developer 的 Bot-> Webhook URL。
 
-2. 再打开一个终端，运行以下命令：
+    拿到 Webhook Key 填入.env 文件中。
+
+3. 再打开一个终端，运行以下命令：
 
     ```bash
     python tests/2-deepseek.py
