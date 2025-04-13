@@ -1,13 +1,21 @@
-from debox_chat import DeBox
-from openai import OpenAI
-import requests
-from flask import Flask, request, jsonify
-from dotenv import load_dotenv
+import sys
 import os
 
+# 添加项目根目录到模块搜索路径
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+# 设置 .env 文件路径
 dotenv_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "../.env")
+
+# 现在可以开始导入其他模块了
+from debox_chat import DeBox
+from openai import OpenAI
+from flask import Flask, request, jsonify
+from dotenv import load_dotenv
+
+# 加载 .env 文件
 load_dotenv(dotenv_path)
+
 
 # 从环境变量中加载配置
 DEBOX_API_KEY = os.getenv("DEBOX_API_KEY")
